@@ -1,0 +1,158 @@
+{
+  '.source.js':
+    'React Redux mapStateToProps':
+      prefix: 'rrmstp'
+      body: '''
+      const mapStateToProps = ( state ) => {
+        return {
+          ${1}
+        };
+      };
+      '''
+
+    'React Redux: mapDispatchToProps':
+      prefix: 'rrmdtp'
+      body: '''
+      const mapDispatchToProps = ( dispatch ) => {
+        return {
+          ${1}
+        };
+      };
+      '''
+
+    'React Redux Simple mapStateToProps':
+      prefix: 'rrmstp'
+      body: '''
+      const mapStateToProps = ( state ) => ( {
+        ${1}
+      } ) ;
+      '''
+
+    'React Redux Simple mapDispatchToProps':
+      prefix: 'rrmdtp'
+      body: '''
+      const mapDispatchToProps = ( dispatch ) => ( {
+        ${1}
+      } );
+      '''
+
+    'React Redux Component':
+      prefix: 'rrc'
+      body: '''
+      import React, { PropTypes } from 'react';
+      import { connect } from 'react-redux';
+
+      class ${1} extends React.Component {
+        static propTypes = {
+
+        };
+
+        render () {
+          return;
+        }
+      }
+
+      const mapStateToProps = ( state ) => {
+        return {
+
+        };
+      };
+
+      const mapDispatchToProps = ( dispatch ) => {
+        return {
+
+        };
+      };
+
+      export default connect( mapStateToProps, mapDispatchToProps )( ${1} );
+      '''
+
+    'React Redux Stateful Component':
+      prefix: 'rrsc'
+      body: '''
+      import React, { PropTypes } from 'react';
+      import { connect } from 'react-redux';
+
+      class ${1} extends React.Component {
+        static propTypes = {
+
+        };
+
+        constructor ( props ) {
+          super( props );
+
+          this.state = {
+          };
+        }
+
+        render () {
+          return;
+        }
+      }
+
+      const mapStateToProps = ( state ) => {
+        return {
+
+        };
+      };
+
+      const mapDispatchToProps = ( dispatch ) => {
+        return {
+
+        };
+      };
+
+      export default connect( mapStateToProps, mapDispatchToProps )( ${1} );
+      '''
+
+    'React Redux Simplified Dispatch':
+      prefix: 'rrsd'
+      body: '''
+      import React from 'react';
+      import PropTypes from 'prop-types';
+      import { bindActionCreators } from 'redux';
+      import { connect } from 'react-redux';
+
+      import { Creators } from '${2}'
+
+      class ${1} extends React.Component {
+        static propTypes = {
+
+        };
+
+        constructor ( props ) {
+          super( props );
+
+          this.state = {
+          };
+        }
+
+        render () {
+          return;
+        }
+      }
+
+      export default connect(
+        ( state ) => ( {
+
+        } ),
+        ( dispatch ) => bindActionCreators( Creators, dispatch )
+      )( ${1} );
+      '''
+
+    'React Component':
+      prefix: 'rc'
+      body: '''
+      import React, { PropTypes } from 'react';
+
+      export default class ${1} extends React.Component {
+        static propTypes = {
+
+        };
+
+        render () {
+          return;
+        }
+      }
+      '''
+}
